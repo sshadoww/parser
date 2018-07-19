@@ -1,7 +1,7 @@
 const request = require('request');
 const cheerio = require('cheerio');
 
-let autobathar = function () {
+let autobazar = function () {
 	let getPost = function(url) {
 		request(url, function (err, res, body) {
           if (err) throw err;
@@ -39,4 +39,4 @@ let autobathar = function () {
 	     });
 	}
 }
-module.exports = autobathar;
+module.exports = autobazar;
