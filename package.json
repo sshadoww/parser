@@ -1,0 +1,22 @@
+{
+  "name": "avtomobile-parser",
+  "version": "0.0.1",
+  "description": "Automotive parser for all sites.",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "npm": "^6.2.0",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "npm",
+    "cheerio",
+    "request"
+  ],
+  "author": "Alexandr Subbotin",
+  "license": "MIT"
+}
