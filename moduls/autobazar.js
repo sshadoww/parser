@@ -7,20 +7,24 @@ let autobazar = {
                if (err) throw err;
 
                let $ = cheerio.load(res.body);
-               let post = {};
-
-               post.name    = $('div>h2').text();
-               post.prise   = $('div.QSUFp>div:nth-child(1)').text();
-               post.year    = $('.RyC3G:nth-child(1) div._29-AP').text();
-               post.mileage = $('.RyC3G:nth-child(2) div._29-AP').text();
-               post.kyzov   = $('.RyC3G:nth-child(4) div._29-AP').text();
-               post.type    = $('.RyC3G:nth-child(5) div._29-AP').text();
-               post.color   = $('.RyC3G:nth-child(6) div._29-AP').text();
-               post.engine  = $('.RyC3G:nth-child(7) div._29-AP').text();
-               post.box     = $('.RyC3G:nth-child(8) div._29-AP').text();
-               post.privod  = $('.RyC3G:nth-child(9) div._29-AP').text();
-               post.customs = $('.RyC3G:nth-child(10) div._29-AP').text();
-
+               let post = {
+                    name      : $('div>h2').text(),
+                    prise     : $('div.QSUFp>div:nth-child(1)').text(),
+                    year      : $('div.RyC3G>div:contains("Год выпуска")').next().text(),
+                    mileage   : $('div.RyC3G>div:contains("Пробег")').next().text(),
+                    kyzov     : $('div.RyC3G>div:contains("Кузов")').next().text(),
+                    type      : $('div.RyC3G>div:contains("Тип кузова")').next().text(),
+                    color     : $('div.RyC3G>div:contains("Цвет")').next().text(),
+                    kyzov     : $('div.RyC3G>div:contains("Кузов")').next().text(),
+                    engine    : $('div.RyC3G>div:contains("Двигатель")').next().text(),
+                    box       : $('div.RyC3G>div:contains("Коробка")').next().text(),
+                    privod    : $('div.RyC3G>div:contains("Привод")').next().text(),
+                    customs   : $('div.RyC3G>div:contains("Таможня")').next().text(),
+                    power     : $('div.RyC3G>div:contains("Мощность")').next().text(),
+                    desc      : $('div.kQnkp').text(),
+                    mark      : $('div._3D7Hi > span:nth-child(2) > a').text(),
+                    module    : $('div._3D7Hi > span:nth-child(3) > a').text(),
+               };
                console.log(post);
           });
 	},
